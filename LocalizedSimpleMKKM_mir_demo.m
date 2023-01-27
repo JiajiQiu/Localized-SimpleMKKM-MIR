@@ -56,7 +56,7 @@ for la=1:length(lambda)
         for i =1:num
             A(NS(:,i),NS(:,i)) = A(NS(:,i),NS(:,i))+1;
         end       
-        [H_normalized,Sigma(:,it),obj] = localizedSimpleMKKM(KH,numclass,A,options,MM,lambda(laa),Y);
+        [H_normalized,Sigma(:,it),obj] = localizedSimpleMKKM(KH,numclass,A,options,MM,lambda(la),Y);
         fprintf("===========\n")
         [res_mean((la-1)*5+1:(la-1)*5+4,it),res_std((la-1)*5+1:(la-1)*5+4,it,it)] = myNMIACCV2(H_normalized,Y,numclass);
         fprintf("%g,%g\n",la,it);
